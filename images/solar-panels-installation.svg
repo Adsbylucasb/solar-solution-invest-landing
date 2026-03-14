@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E6FA8"/>
+      <stop offset="55%" stop-color="#4A9FD8"/>
+      <stop offset="100%" stop-color="#7EC4EE"/>
+    </linearGradient>
+    <radialGradient id="sunRad" cx="75%" cy="22%" r="25%">
+      <stop offset="0%" stop-color="#FFF8DC" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#FDE68A" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="roofTile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8A7A6A"/>
+      <stop offset="100%" stop-color="#5A4A3A"/>
+    </linearGradient>
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A2048"/>
+      <stop offset="60%" stop-color="#071535"/>
+      <stop offset="100%" stop-color="#040D22"/>
+    </linearGradient>
+    <linearGradient id="panelSheen" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0%" stop-color="#3060C0" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#3060C0" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="cells" width="24" height="17" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="8.5" x2="24" y2="8.5" stroke="#2050A0" stroke-width="0.8" opacity="0.65"/>
+      <line x1="12" y1="0" x2="12" y2="17" stroke="#2050A0" stroke-width="0.8" opacity="0.65"/>
+    </pattern>
+    <filter id="panelShad">
+      <feDropShadow dx="2" dy="5" stdDeviation="6" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="sunGlare">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feBlend in="SourceGraphic" in2="blur" mode="screen"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="800" height="520" fill="url(#sky)"/>
+
+  <!-- Sun glow -->
+  <circle cx="600" cy="115" r="180" fill="url(#sunRad)"/>
+  <circle cx="600" cy="115" r="42" fill="#FFFACD" opacity="0.95" filter="url(#sunGlare)"/>
+  <circle cx="600" cy="115" r="36" fill="#FFF8DC"/>
+
+  <!-- Sun rays -->
+  <g stroke="#FDE68A" stroke-width="1.5" opacity="0.4">
+    <line x1="600" y1="62" x2="600" y2="45"/><line x1="600" y1="168" x2="600" y2="185"/>
+    <line x1="547" y1="68" x2="534" y2="55"/><line x1="653" y1="68" x2="666" y2="55"/>
+    <line x1="540" y1="115" x2="523" y2="115"/><line x1="660" y1="115" x2="677" y2="115"/>
+    <line x1="547" y1="162" x2="534" y2="175"/><line x1="653" y1="162" x2="666" y2="175"/>
+  </g>
+
+  <!-- Clouds -->
+  <g fill="white" opacity="0.75">
+    <ellipse cx="120" cy="110" rx="75" ry="35"/><ellipse cx="170" cy="100" rx="65" ry="30"/><ellipse cx="88"  cy="120" rx="50" ry="26"/>
+  </g>
+  <g fill="white" opacity="0.55">
+    <ellipse cx="380" cy="70" rx="55" ry="25"/><ellipse cx="420" cy="62" rx="45" ry="20"/>
+  </g>
+
+  <!-- ROOF SURFACE (angled perspective) -->
+  <!-- Roof background tiles -->
+  <polygon points="0,260 800,140 800,520 0,520" fill="url(#roofTile)"/>
+  <!-- Tile course lines (horizontal) -->
+  <g stroke="#6A5A4A" stroke-width="1" opacity="0.35">
+    <line x1="0" y1="292" x2="800" y2="172"/><line x1="0" y1="324" x2="800" y2="204"/>
+    <line x1="0" y1="356" x2="800" y2="236"/><line x1="0" y1="388" x2="800" y2="268"/>
+    <line x1="0" y1="420" x2="800" y2="300"/><line x1="0" y1="452" x2="800" y2="332"/>
+    <line x1="0" y1="484" x2="800" y2="364"/>
+  </g>
+  <!-- Tile column lines -->
+  <g stroke="#6A5A4A" stroke-width="0.8" opacity="0.2">
+    <line x1="80"  y1="260" x2="80"  y2="520"/><line x1="160" y1="250" x2="160" y2="520"/>
+    <line x1="240" y1="241" x2="240" y2="520"/><line x1="320" y1="232" x2="320" y2="520"/>
+    <line x1="400" y1="222" x2="400" y2="520"/><line x1="480" y1="213" x2="480" y2="520"/>
+    <line x1="560" y1="204" x2="560" y2="520"/><line x1="640" y1="195" x2="640" y2="520"/>
+    <line x1="720" y1="185" x2="720" y2="520"/>
+  </g>
+
+  <!-- SOLAR PANEL ARRAY — 5 columns × 4 rows on angled roof -->
+  <!-- Using skew/transform to match roof angle (-10 deg perspective) -->
+  <g filter="url(#panelShad)">
+    <!-- Col 1 -->
+    <g transform="translate(38,272) skewY(-10)">
+      <rect y="0"   width="118" height="75" rx="3" fill="url(#panelGrad)"/>
+      <rect y="0"   width="118" height="75" rx="3" fill="url(#cells)"/>
+      <rect y="0"   width="118" height="75" rx="3" fill="url(#panelSheen)"/>
+      <rect y="0"   width="118" height="75" rx="3" fill="none" stroke="#0C3070" stroke-width="1.2"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="url(#panelGrad)"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="url(#cells)"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="url(#panelSheen)"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="none" stroke="#0C3070" stroke-width="1.2"/>
+      <rect y="184" width="118" height="75" rx="3" fill="url(#panelGrad)"/>
+      <rect y="184" width="118" height="75" rx="3" fill="url(#cells)"/>
+      <rect y="184" width="118" height="75" rx="3" fill="url(#panelSheen)"/>
+      <rect y="184" width="118" height="75" rx="3" fill="none" stroke="#0C3070" stroke-width="1.2"/>
+    </g>
+    <!-- Col 2 -->
+    <g transform="translate(170,251) skewY(-10)">
+      <rect y="0"   width="118" height="75" rx="3" fill="url(#panelGrad)"/>
+      <rect y="0"   width="118" height="75" rx="3" fill="url(#cells)"/>
+      <rect y="0"   width="118" height="75" rx="3" fill="url(#panelSheen)"/>
+      <rect y="0"   width="118" height="75" rx="3" fill="none" stroke="#0C3070" stroke-width="1.2"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="url(#panelGrad)"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="url(#cells)"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="url(#panelSheen)"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="none" stroke="#0C3070" stroke-width="1.2"/>
+      <rect y="184" width="118" height="75" rx="3" fill="url(#panelGrad)"/>
+      <rect y="184" width="118" height="75" rx="3" fill="url(#cells)"/>
+      <rect y="184" width="118" height="75" rx="3" fill="url(#panelSheen)"/>
+      <rect y="184" width="118" height="75" rx="3" fill="none" stroke="#0C3070" stroke-width="1.2"/>
+    </g>
+    <!-- Col 3 -->
+    <g transform="translate(302,230) skewY(-10)">
+      <rect y="0"   width="118" height="75" rx="3" fill="url(#panelGrad)"/>
+      <rect y="0"   width="118" height="75" rx="3" fill="url(#cells)"/>
+      <rect y="0"   width="118" height="75" rx="3" fill="url(#panelSheen)"/>
+      <rect y="0"   width="118" height="75" rx="3" fill="none" stroke="#0C3070" stroke-width="1.2"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="url(#panelGrad)"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="url(#cells)"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="url(#panelSheen)"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="none" stroke="#0C3070" stroke-width="1.2"/>
+      <rect y="184" width="118" height="75" rx="3" fill="url(#panelGrad)"/>
+      <rect y="184" width="118" height="75" rx="3" fill="url(#cells)"/>
+      <rect y="184" width="118" height="75" rx="3" fill="url(#panelSheen)"/>
+      <rect y="184" width="118" height="75" rx="3" fill="none" stroke="#0C3070" stroke-width="1.2"/>
+    </g>
+    <!-- Col 4 -->
+    <g transform="translate(434,209) skewY(-10)">
+      <rect y="0"   width="118" height="75" rx="3" fill="url(#panelGrad)"/>
+      <rect y="0"   width="118" height="75" rx="3" fill="url(#cells)"/>
+      <rect y="0"   width="118" height="75" rx="3" fill="url(#panelSheen)"/>
+      <rect y="0"   width="118" height="75" rx="3" fill="none" stroke="#0C3070" stroke-width="1.2"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="url(#panelGrad)"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="url(#cells)"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="url(#panelSheen)"/>
+      <rect y="92"  width="118" height="75" rx="3" fill="none" stroke="#0C3070" stroke-width="1.2"/>
+    </g>
+  </g>
+
+  <!-- Panel sun glint -->
+  <ellipse cx="300" cy="310" rx="160" ry="60" fill="#FDE68A" opacity="0.07"/>
+
+  <!-- Info badge (top-left) -->
+  <rect x="28" y="22" width="136" height="62" rx="12" fill="#F59E0B" opacity="0.97"/>
+  <text x="96" y="44" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="700" fill="white">Jusqu'à 12 kWc</text>
+  <text x="96" y="65" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Production annuelle</text>
+
+  <!-- ROI badge (top-right) -->
+  <rect x="636" y="22" width="136" height="62" rx="12" fill="#0C1445" opacity="0.95"/>
+  <text x="704" y="44" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="700" fill="white">Retour en 6–8 ans</text>
+  <text x="704" y="65" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.88)">Garantie 25 ans</text>
+</svg>

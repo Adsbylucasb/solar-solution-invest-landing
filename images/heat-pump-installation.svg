@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7EC8E3"/>
+      <stop offset="100%" stop-color="#B8E4F4"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F4EFE6"/>
+      <stop offset="100%" stop-color="#E8E0D0"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4A8A3A"/>
+      <stop offset="100%" stop-color="#2A5A20"/>
+    </linearGradient>
+    <linearGradient id="hpBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EAECF0"/>
+      <stop offset="100%" stop-color="#D2D6DC"/>
+    </linearGradient>
+    <linearGradient id="hpGrille" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C2C6CC"/>
+      <stop offset="100%" stop-color="#AAAFB6"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="4" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="800" height="520" fill="url(#sky)"/>
+
+  <!-- Clouds -->
+  <g fill="white" opacity="0.82">
+    <ellipse cx="155" cy="95" rx="78" ry="38"/><ellipse cx="210" cy="85" rx="65" ry="32"/><ellipse cx="120" cy="105" rx="52" ry="28"/>
+  </g>
+  <g fill="white" opacity="0.72">
+    <ellipse cx="630" cy="75" rx="88" ry="42"/><ellipse cx="685" cy="65" rx="70" ry="36"/><ellipse cx="595" cy="85" rx="58" ry="30"/>
+  </g>
+  <g fill="white" opacity="0.55">
+    <ellipse cx="390" cy="50" rx="58" ry="26"/><ellipse cx="432" cy="42" rx="48" ry="22"/>
+  </g>
+
+  <!-- House wall (fills lower 60%) -->
+  <rect x="0" y="148" width="800" height="288" fill="url(#wall)"/>
+  <!-- Wall top overhang -->
+  <rect x="0" y="143" width="800" height="11" fill="#D8D0C0"/>
+  <!-- Subtle brick coursing -->
+  <g stroke="#C8C0B0" stroke-width="0.6" opacity="0.18">
+    <line x1="0" y1="180" x2="800" y2="180"/><line x1="0" y1="212" x2="800" y2="212"/>
+    <line x1="0" y1="244" x2="800" y2="244"/><line x1="0" y1="276" x2="800" y2="276"/>
+    <line x1="0" y1="308" x2="800" y2="308"/><line x1="0" y1="340" x2="800" y2="340"/>
+    <line x1="0" y1="372" x2="800" y2="372"/><line x1="0" y1="404" x2="800" y2="404"/>
+  </g>
+  <!-- Vertical brick offsets -->
+  <g stroke="#C8C0B0" stroke-width="0.5" opacity="0.12">
+    <line x1="80"  y1="148" x2="80"  y2="436"/><line x1="240" y1="148" x2="240" y2="436"/>
+    <line x1="400" y1="148" x2="400" y2="436"/><line x1="560" y1="148" x2="560" y2="436"/>
+    <line x1="720" y1="148" x2="720" y2="436"/>
+  </g>
+
+  <!-- Ground -->
+  <rect x="0" y="436" width="800" height="84" fill="url(#ground)"/>
+  <!-- Ground shadow of wall -->
+  <rect x="0" y="436" width="800" height="12" fill="#000" opacity="0.08"/>
+
+  <!-- Concrete slab for heat pump -->
+  <rect x="268" y="420" width="264" height="20" rx="3" fill="#BDB8AC"/>
+  <rect x="272" y="422" width="256" height="16" rx="2" fill="#CCC8BC"/>
+
+  <!-- HEAT PUMP UNIT -->
+  <g filter="url(#cardShadow)">
+    <!-- Body -->
+    <rect x="278" y="285" width="244" height="138" rx="9" fill="url(#hpBody)"/>
+    <!-- Top cap -->
+    <rect x="278" y="285" width="244" height="14" rx="5" fill="#DCE0E5"/>
+    <!-- Bottom foot ledge -->
+    <rect x="278" y="409" width="244" height="14" rx="5" fill="#C8CCD2"/>
+
+    <!-- Fan grille circle -->
+    <circle cx="400" cy="354" r="84" fill="url(#hpGrille)"/>
+    <!-- Grille ring lines -->
+    <circle cx="400" cy="354" r="80" fill="none" stroke="#D8DCE0" stroke-width="2"/>
+    <circle cx="400" cy="354" r="62" fill="none" stroke="#D0D4D8" stroke-width="1.5"/>
+    <circle cx="400" cy="354" r="44" fill="none" stroke="#C8CCD0" stroke-width="1.5"/>
+    <circle cx="400" cy="354" r="26" fill="none" stroke="#C0C4C8" stroke-width="1.5"/>
+    <!-- Grille cross spokes -->
+    <line x1="318" y1="354" x2="482" y2="354" stroke="#C0C4C8" stroke-width="2"/>
+    <line x1="400" y1="272" x2="400" y2="436" stroke="#C0C4C8" stroke-width="2"/>
+    <line x1="342" y1="296" x2="458" y2="412" stroke="#C4C8CC" stroke-width="1.5"/>
+    <line x1="458" y1="296" x2="342" y2="412" stroke="#C4C8CC" stroke-width="1.5"/>
+    <!-- Fan blades hint -->
+    <circle cx="400" cy="354" r="78" fill="none" stroke="#D8DCE0" stroke-width="1" stroke-dasharray="12 6"/>
+    <!-- Hub -->
+    <circle cx="400" cy="354" r="14" fill="#D0D4D8"/>
+    <circle cx="400" cy="354" r="7" fill="#C0C4C8"/>
+
+    <!-- Left control panel -->
+    <rect x="283" y="289" width="64" height="30" rx="3" fill="#E4E8EC"/>
+    <!-- Green status LED -->
+    <circle cx="296" cy="304" r="5.5" fill="#10B981"/>
+    <circle cx="296" cy="304" r="3.5" fill="#34D399"/>
+    <!-- Small display -->
+    <rect x="308" y="297" width="36" height="14" rx="2" fill="#1E2A38"/>
+    <rect x="310" y="299" width="32" height="10" rx="1" fill="#0D3A5A"/>
+
+    <!-- Brand label area right -->
+    <rect x="536" y="289" width="82" height="20" rx="2" fill="#DCE0E5"/>
+
+    <!-- Refrigerant pipe fittings at top -->
+    <rect x="290" y="272" width="16" height="18" rx="3" fill="#9AAABB"/>
+    <rect x="314" y="272" width="16" height="18" rx="3" fill="#AABBC8"/>
+
+    <!-- Base feet -->
+    <rect x="288" y="419" width="32" height="8" rx="2" fill="#B0B8C0"/>
+    <rect x="480" y="419" width="32" height="8" rx="2" fill="#B0B8C0"/>
+  </g>
+
+  <!-- Connecting pipes on wall -->
+  <rect x="296" y="258" width="10" height="32" rx="3" fill="#8AABB0"/>
+  <rect x="314" y="258" width="10" height="32" rx="3" fill="#9ABBC0"/>
+  <!-- Pipe insulation -->
+  <rect x="293" y="210" width="16" height="55" rx="4" fill="#5A7A80" opacity="0.6"/>
+  <rect x="311" y="218" width="16" height="47" rx="4" fill="#6A8A90" opacity="0.6"/>
+
+  <!-- House window (left) -->
+  <rect x="60" y="185" width="130" height="110" rx="5" fill="#B8D8E8" opacity="0.85"/>
+  <rect x="60" y="185" width="130" height="110" rx="5" fill="none" stroke="#C8C0B0" stroke-width="2.5"/>
+  <line x1="60"  y1="240" x2="190" y2="240" stroke="#C8C0B0" stroke-width="2" opacity="0.6"/>
+  <line x1="125" y1="185" x2="125" y2="295" stroke="#C8C0B0" stroke-width="2" opacity="0.6"/>
+  <!-- Sky reflection in window -->
+  <rect x="62" y="187" width="62" height="51" rx="2" fill="#87CEEB" opacity="0.45"/>
+  <!-- Window frame shadow -->
+  <rect x="62" y="187" width="4" height="108" rx="1" fill="#A8A090" opacity="0.2"/>
+
+  <!-- House window (right) -->
+  <rect x="610" y="185" width="130" height="110" rx="5" fill="#B8D8E8" opacity="0.85"/>
+  <rect x="610" y="185" width="130" height="110" rx="5" fill="none" stroke="#C8C0B0" stroke-width="2.5"/>
+  <line x1="610" y1="240" x2="740" y2="240" stroke="#C8C0B0" stroke-width="2" opacity="0.6"/>
+  <line x1="675" y1="185" x2="675" y2="295" stroke="#C8C0B0" stroke-width="2" opacity="0.6"/>
+  <rect x="612" y="187" width="62" height="51" rx="2" fill="#87CEEB" opacity="0.45"/>
+
+  <!-- Plants / shrubs -->
+  <g>
+    <rect x="98" y="410" width="15" height="28" rx="3" fill="#7A5535"/>
+    <ellipse cx="106" cy="378" rx="42" ry="55" fill="#2A7A22"/>
+    <ellipse cx="88"  cy="393" rx="32" ry="45" fill="#1E6A18"/>
+    <ellipse cx="124" cy="388" rx="32" ry="45" fill="#228B22"/>
+    <ellipse cx="106" cy="365" rx="38" ry="50" fill="#2E8B24"/>
+  </g>
+  <g>
+    <rect x="688" y="410" width="15" height="28" rx="3" fill="#7A5535"/>
+    <ellipse cx="696" cy="378" rx="42" ry="55" fill="#2A7A22"/>
+    <ellipse cx="678" cy="393" rx="32" ry="45" fill="#1E6A18"/>
+    <ellipse cx="714" cy="388" rx="32" ry="45" fill="#228B22"/>
+    <ellipse cx="696" cy="365" rx="38" ry="50" fill="#2E8B24"/>
+  </g>
+
+  <!-- Efficiency badge (top-left) -->
+  <rect x="30" y="24" width="128" height="60" rx="12" fill="#0EA5E9" opacity="0.96"/>
+  <text x="94" y="46" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="700" fill="white">COP jusqu'à 5</text>
+  <text x="94" y="66" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.88)">Pompe à chaleur</text>
+
+  <!-- A+++ badge (top-right) -->
+  <rect x="642" y="24" width="128" height="60" rx="12" fill="#10B981" opacity="0.96"/>
+  <text x="706" y="46" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="800" fill="white">A+++</text>
+  <text x="706" y="66" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.88)">Efficacité énergétique</text>
+</svg>
